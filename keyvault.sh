@@ -2,6 +2,7 @@ CLIENTID=67354fde-9231-4931-8580-960912f9d25f
 CLIENTSECRET=2c24aa11-ab58-4356-9548-db3bfa8331b5
 SQLUSR=sqladmin9Cv6941
 SQLPWD=pC3kn9T85
+SQLSVR=sqlserver9cv6941.database.windows.net
 KV_NAME=aks010kv
 SUBSCRIPTION=ae235c5e-7998-4b1d-9a67-40dfcab3f663
 RES_GROUP=teamResources
@@ -31,5 +32,6 @@ az keyvault set-policy -n $KV_NAME --certificate-permissions get --spn $CLIENTID
 
 #Add our SQL credentials as a secret to key vault
 #not working due to underscore, just used sqlusr and sqlpwd for now in what i've run
-az keyvault secret set -n SQLUSER --vault-name aks010kv --value $SQLUSR
-az keyvault secret set -n SQLPASSWORD --vault-name aks010kv --value $SQLPWD
+az keyvault secret set -n sqlusr --vault-name aks010kv --value $SQLUSR
+az keyvault secret set -n sqlpass --vault-name aks010kv --value $SQLPWD
+az keyvault secret set -n sqlserver --vault-name aks010kv --value $SQLSVR

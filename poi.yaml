@@ -38,8 +38,9 @@ spec:
             options:
               usepodidentity: "false"        # [OPTIONAL] if not provided, will default to "false"
               keyvaultname: "aks010kv"               # the name of the KeyVault
-              keyvaultobjectnames: sqlusr;sqlpwd    # list of KeyVault object names (semi-colon separated)
-              keyvaultobjecttypes: secret;secret  # list of KeyVault object types: secret, key or cert (semi-colon separated)
+              keyvaultobjectnames: sqlusr;sqlpass;sqlserver    # list of KeyVault object names (semi-colon separated)
+              keyvaultobjecttypes: secret;secret;secret  # list of KeyVault object types: secret, key or cert (semi-colon separated)
+              keyvaultobjectaliases: SQL_USER;SQL_PASSWORD;SQL_SERVER
               keyvaultobjectversions: ""     # [OPTIONAL] list of KeyVault object versions (semi-colon separated), will get latest if empty
               resourcegroup: "teamResources" # [REQUIRED FOR < v0.0.14] the resource group of the KeyVault
               subscriptionid: "ae235c5e-7998-4b1d-9a67-40dfcab3f663" # [REQUIRED FOR < v0.0.14] the subscription ID of the KeyVault
