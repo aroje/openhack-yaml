@@ -2,23 +2,23 @@
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
-  name: api-dev-role
-  namespace: api-dev
+  name: web-dev-role
+  namespace: web-dev
 rules:
-- apiGroups: ["api"]
+- apiGroups: [""]
   resources: ["*"]
   verbs: ["*"]
 ---
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
-  name: api-dev-rolebinding
-  namespace: api-dev
+  name: web-dev-rolebinding
+  namespace: web-dev
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: api-dev-role
+  name: web-dev-role
 subjects:
 - kind: User
-  namespace: api-dev
-  name: "apidev@OTAPRD344ops.onmicrosoft.com"
+  namespace: web-dev
+  name: "webdev@OTAPRD344ops.onmicrosoft.com"

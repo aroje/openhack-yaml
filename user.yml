@@ -5,6 +5,7 @@ kind: Deployment
 metadata: 
 
   name: user-deployment 
+  namespace: api-dev
 
   labels: 
 
