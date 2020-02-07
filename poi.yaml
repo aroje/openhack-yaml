@@ -37,8 +37,8 @@ spec:
                 name: clusspncreds                 # [OPTIONAL] not required if using Pod Identity
               options:
                 usepodidentity: "false"        # [OPTIONAL] if not provided, will default to "false"
-                keyvaultname: "aka010kv"               # the name of the KeyVault
-                keyvaultobjectnames: sql_user;sql_passsword    # list of KeyVault object names (semi-colon separated)
+                keyvaultname: "aks010kv"               # the name of the KeyVault
+                keyvaultobjectnames: sqlusr;sqlpwd    # list of KeyVault object names (semi-colon separated)
                 keyvaultobjecttypes: secret;secret  # list of KeyVault object types: secret, key or cert (semi-colon separated)
                 keyvaultobjectversions: ""     # [OPTIONAL] list of KeyVault object versions (semi-colon separated), will get latest if empty
                 resourcegroup: "teamResources" # [REQUIRED FOR < v0.0.14] the resource group of the KeyVault
