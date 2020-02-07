@@ -1,0 +1,59 @@
+apiVersion: apps/v1 
+
+kind: Deployment 
+
+metadata: 
+
+  name: user-deployment 
+
+  labels: 
+
+    app: user-deployment 
+
+spec: 
+
+  replicas: 2 
+
+  selector: 
+
+    matchLabels: 
+
+      app: user 
+
+  template: 
+
+    metadata: 
+
+      labels: 
+
+        app: user 
+
+    spec: 
+
+      containers: 
+
+      - name: user 
+
+        image: registry9cv6941.azurecr.io/tripinsights/user:cg7 
+
+        ports: 
+
+        - containerPort: 80 
+
+        env: 
+
+        - name: ASPNETCORE_ENVIRONMENT 
+
+          value: "local" 
+
+        - name: SQL_USER 
+
+          value: "sqladmin9Cv6941" 
+
+        - name: SQL_PASSWORD 
+
+          value: "pC3kn9T85" 
+
+        - name: SQL_SERVER 
+
+          value: "sqlserver9cv6941.database.windows.net" 
