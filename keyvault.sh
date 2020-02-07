@@ -15,7 +15,7 @@ kubectl get pods -n kv
 #Should be 3 pods
 
 #Add your service principal credentials as Kubernetes secrets accessible by the Key Vault FlexVolume driver
-kubectl create secret generic cluspncreds --from-literal clientid=$CLIENTID --from-literal clientsecret=$CLIENTSECRET --type=azure/kv
+kubectl create secret generic cluspncreds --from-literal clientid=$CLIENTID --from-literal clientsecret=$CLIENTSECRET --type=azure/kv --namespace api-dev
 
 # Assign key vault permissions to service principal
 az keyvault set-policy -n $KV_NAME --key-permissions get --spn $CLIENTID
@@ -24,5 +24,5 @@ az keyvault set-policy -n $KV_NAME --certificate-permissions get --spn $CLIENTID
 
 #Add our SQL credentials as a secret to key vault
 #not working due to underscore, just used sqlusr and sqlpwd for now in what i've run
-az keyvault secret set -n SQL_USER --vault-name aks010kv --value $SQLUSR
-az keyvault secret set -n SQL_PASSWORD --vault-name aks010kv --value $SQLPWD
+az keyvault secret set -n SQLUSER --vault-name aks010kv --value $SQLUSR
+az keyvault secret set -n SQLPASSWORD --vault-name aks010kv --value $SQLPWD
