@@ -5,7 +5,7 @@ metadata:
   name: api-dev-role
   namespace: api-dev
 rules:
-- apiGroups: ["api"]
+- apiGroups: [""]
   resources: ["*"]
   verbs: ["*"]
 ---
@@ -30,7 +30,7 @@ metadata:
   name: api-dev-read-role
   namespace: api-dev
 rules:
-- apiGroups: ["api"]
+- apiGroups: [""]
   resources: ["*"]
   verbs: ["get", "list", "watch"]
 ---
