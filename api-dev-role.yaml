@@ -4,6 +4,6 @@ metadata:
   name: api-dev-role
   namespace: api-dev
 rules:
-- apiGroups: ["", "extensions", "apps"]
+- apiGroups: ["api"]
   resources: ["*"]
   verbs: ["*"]
