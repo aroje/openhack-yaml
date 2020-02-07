@@ -5,6 +5,7 @@ kind: Deployment
 metadata: 
 
   name: trips-deployment 
+  namespace: api-dev
 
   labels: 
 

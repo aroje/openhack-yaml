@@ -5,6 +5,7 @@ kind: Deployment
 metadata: 
 
   name: userprofile-deployment 
+  namespace: api-dev
 
   labels: 
 
