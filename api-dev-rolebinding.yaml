@@ -10,4 +10,4 @@ roleRef:
 subjects:
 - kind: User
   namespace: api-dev
-  name: api-dev
+  name: apidev@OTAPRD344ops.onmicrosoft.com
